@@ -2,9 +2,11 @@ from fastapi import FastAPI
 from models import Product
 from database import Session, engine
 import database_models
+
 app = FastAPI()
 
 database_models.Base.metadata.create_all(bind=engine)
+
 
 # Get: Read
 @app.get("/")
